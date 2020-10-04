@@ -1,0 +1,14 @@
+p {
+  font-family: Lato;
+}
+
+.container-fluid{
+  min-height: calc(100vh - 56px);
+}
+.navbar-dark{
+  background: #7952b3;
+}
+
+.spacing {
+  margin-right: 25px;
+}

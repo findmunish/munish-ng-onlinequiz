@@ -1,0 +1,33 @@
+<nav class="navbar navbar-dark">
+  <div class="navbar-brand">
+    <h1>Online Quiz Application</h1>
+  </div>
+  <div>
+  <div>
+    <button
+      class="btn btn-primary spacing"
+      routerLink=''
+      (click)="onHome()">
+        Home
+    </button>
+    <button
+      class="btn btn-primary spacing"
+      [disabled]="stateService.isLoggedIn"
+      routerLink={{routesService.LOGIN}}
+      (click)="onLogin()">
+        Login
+    </button>
+    <button
+      [disabled]="!this.stateService.isLoggedIn"
+      class="btn btn-primary spacing"
+      routerLink=''
+      (click)="onLogout()">
+        Logout
+    </button>
+  </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+

@@ -1,0 +1,51 @@
+<div class="jumbotron">
+  <div *ngIf="stateService.isLoggedIn && !questionBankService.isNoQuestions()">
+    <h1>Welcome to the 'Online Quiz Questionarie'}}</h1>
+    <h3>All the best!</h3>
+    <div *ngIf="!questionBankService.isAttempted()">
+      <button
+        class="btn btn-primary spacing"
+        (click)="OnBeginTest()">
+          BeginTest
+      </button>
+    </div>
+  </div>
+  <div *ngIf="questionBankService.isAttempted() && !questionBankService.isNoQuestions()">
+    <button
+      class="btn btn-primary spacing"
+      routerLink={{routesService.REVIEW}}
+      (click)="OnReviewTest()">
+        Review Test
+    </button>
+    <button
+      class="btn btn-primary spacing"
+      routerLink={{routesService.RESULT}}
+      (click)="OnViewTestResults()">
+        View Results
+    </button>
+  </div>
+  <!--<app-error-list></app-error-list>-->
+  <!--<app-error> </app-error>-->
+</div>
+<!--<button
+    class="btn btn-primary spacing"
+    routerLink='/question/1'>
+      testing button
+  </button>-->
+<!--
+<h4>Displaying Question Database</h4>
+
+<table style="width:100%" border="1px">
+  <h1>Questionaire</h1>
+  <tr>
+    <th>Question</th>
+    <th>Answer</th>
+    <th>Correct Index</th>
+  </tr>
+  <tr *ngFor = "let question of fetchedQuestionsJson.questions">
+    <td> {{question.question}} </td>
+    <td >{{question.answers}} </td>
+    <td> {{question.correctIndex}} </td>
+  </tr>
+</table>
+-->

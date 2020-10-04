@@ -1,0 +1,17 @@
+<div>
+  <div *ngIf="!stateService.isLoggedIn">
+    <div *ngFor="let message in stateService.getLoginFailMessages()">
+      <h3 class="alert alert-danger"> {{message}}</h3>
+    </div>
+  </div>
+  <div *ngIf="stateService.isLoggedIn && questionBankService.isNoQuestions()">
+    <div *ngFor="let message in questionBankService.getNoQuestionsMessages()">
+      <h3 class="alert alert-danger"> {{message}}</h3>
+    </div>
+  </div>
+  <div *ngIf="stateService.isLoggedIn && !questionBankService.isNoQuestions() && !questionBankService.isAttempted()">
+    <div *ngFor="let message in questionBankService.getIncompleteEvaluationMessages()">
+      <h3 class="alert alert-danger"> {{message}}</h3>
+    </div>
+  </div>
+</div>

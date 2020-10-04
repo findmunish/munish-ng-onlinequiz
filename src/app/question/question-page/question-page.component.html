@@ -1,0 +1,18 @@
+<div *ngIf="!questionBankService.isAttempted()">
+  <h4>{{currQuestion && currQuestion.question}}</h4>
+  <form #QuestionaireForm="ngForm" (ngSubmit)="onSubmit(QuestionaireForm.value)">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let answer of currQuestion.answers; let idx = index;">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <label class="input-group-text"  [for]="idx + answer">
+              <input type="radio" [name]="currQuestion.question" [id]="idx + answer" [value]="idx" ngModel required #myAnswer="ngModel" aria-label="Radio button for following text input">
+            </label>
+          </div>
+          <input type="text" class="form-control" aria-label="Text input with radio button" [value]="answer" disabled>
+        </div>
+      </li>
+    </ul>
+    <input type="submit" [disabled]="QuestionaireForm.invalid" class="btn btn-primary" [ngClass]="{'btn-dark': QuestionaireForm.valid}" value="Submit">
+  </form>
+</div>

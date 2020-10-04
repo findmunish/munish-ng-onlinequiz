@@ -22,7 +22,5 @@ export class AppComponent  {
     this.stateService.isLoggedIn = false;
     this.questionBankService.resetQuestionBank();
   }
-  onHome() {
-    console.log(this.questionBankService);
-  }
+  onHome() {}
 }

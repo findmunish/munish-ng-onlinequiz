@@ -19,7 +19,9 @@ export class AppComponent  {
               public loginService: LoginService,
               public questionBankService: QuestionBankService,
               public routingService: RoutingService) {}
-  ngOnInit() {}
+  ngOnInit() {
+    this.router.navigateByUrl(this.routingService.LOGIN)
+  }
   onLogin() {}
   onLogout() {
     this.loginService.isLoggedIn = false;

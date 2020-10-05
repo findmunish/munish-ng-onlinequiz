@@ -10,7 +10,7 @@ import { HelloComponent } from './hello.component';
 import { QuestionBankService } from './services/question-bank.service';
 import { RoutingService } from './services/routing.service';
 import { LoginService } from './services/login.service';
-//import { ErrorsComponent } from './errors/errors.component';
+import { ErrorsComponent } from './errors/errors.component';
 
 @NgModule({
 imports: [
@@ -23,7 +23,7 @@ imports: [
   declarations: [
     AppComponent,
     HelloComponent,
-    //ErrorsComponent
+    ErrorsComponent
   ],
   providers: [
     QuestionBankService,

@@ -16,10 +16,10 @@ import { RoutesService } from '../../services/routes.service';
 export class QuizComponent implements OnInit, OnDestroy {
   questionaireJsonLink = 'https://api.jsonbin.io/b/5f780373302a837e95736e9a';
   constructor(private httpQuestionaireClient: HttpClient,
-                      public loginService: LoginService,
-                      public questionBankService: QuestionBankService,
-                      public routesService: RoutesService,
-                      private router: Router) { }
+              public loginService: LoginService,
+              public questionBankService: QuestionBankService,
+              public routesService: RoutesService,
+              private router: Router) { }
   isTestAttempted = false;
   isTestAttempted$: Subscription;
   ngOnInit() {

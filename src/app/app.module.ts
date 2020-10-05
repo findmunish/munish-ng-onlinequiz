@@ -10,7 +10,6 @@ import { HelloComponent } from './hello.component';
 import { QuestionBankService } from './services/question-bank.service';
 import { RoutingService } from './services/routing.service';
 import { LoginService } from './services/login.service';
-import { ErrorsComponent } from './errors/errors.component';
 
 @NgModule({
   imports: [
@@ -20,7 +19,6 @@ import { ErrorsComponent } from './errors/errors.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  exports: [ ErrorsComponent ],
   declarations: [
     AppComponent,
     HelloComponent

@@ -24,8 +24,8 @@
         View Results
     </button>
   </div>
-  <ErrorsComponent></ErrorsComponent>
-  <!--<div *ngIf="!loginService.isLoggedIn">
+  <!--<ErrorsComponent></ErrorsComponent>-->
+  <div *ngIf="!loginService.isLoggedIn">
     <div *ngFor="let message of loginService.getLoginFailMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
@@ -39,6 +39,6 @@
     <div *ngFor="let message of questionBankService.getIncompleteEvaluationMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
-  </div>-->
+  </div>
 </div>
 

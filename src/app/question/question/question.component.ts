@@ -1,18 +1,16 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-// import { Subscription } from 'rxjs';
 
 import { LoginService } from '../../services/login.service';
 import { QuestionBankService } from '../../services/question-bank.service';
 import { RoutingService } from '../../services/routing.service';
-//import { ErrorComponent } from '../error/error.component';
 
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.css']
 })
-export class QuestionComponent implements OnInit/*, OnDestroy*/ {
+export class QuestionComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
               private router:Router,
               public loginService: LoginService,
@@ -20,21 +18,12 @@ export class QuestionComponent implements OnInit/*, OnDestroy*/ {
               public routingService: RoutingService) {}
   currQuesIndex = -1;
   currQuestion: any = [];
-  //isTestAttempted = false;
-  //isTestAttempted$: Subscription;
   ngOnInit(): void {
     this.setCurrentQuestionNum(this.activatedRoute.snapshot.paramMap.get('id') );
     if(!this.questionBankService.isNoQuestions()) {
       this.currQuestion = this.questionBankService.questionBank.questions[this.currQuesIndex];
     }
-    /*this.isTestAttempted$ = this.questionBankService.isTestAttempted.subscribe(res => {
-      this.isTestAttempted = res;
-    });*/
   }
-  /*ngOnDestroy() {
-    this.questionBankService.isTestAttempted.next(false);
-    this.isTestAttempted$.unsubscribe();
-  }*/
   setCurrentQuestionNum(strId) {
     this.currQuesIndex = parseInt(strId) - 1;
   }
@@ -50,7 +39,6 @@ export class QuestionComponent implements OnInit/*, OnDestroy*/ {
       this.currQuestion = this.questionBankService.questionBank && this.questionBankService.questionBank.questions[this.currQuesIndex];
       routeEndPoint = `${this.routingService.QUESTION_PARTIAL}/${this.currQuesIndex + 1}`;
     } else {
-      //this.questionBankService.checkTestAttempt();
       routeEndPoint = `${this.routingService.QUIZ}`;
     }
     this.router.navigateByUrl(routeEndPoint);

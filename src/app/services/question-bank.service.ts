@@ -45,7 +45,7 @@ export class QuestionBankService {
   getNumCorrect() {
     if (this.isNoQuestions()) return 0;
     console.log('questionBank: ', this.questionBank.questions);
-    let correctList = this.questionBank.questions.filter(q => (q.selectedIndex && q.selectedIndex === q.correctIndex));
+    let correctList = this.questionBank.questions.filter(q => q.selectedIndex === q.correctIndex); 
     return correctList.length;
   }
   getPercentage() {

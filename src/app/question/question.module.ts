@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
-import { QuestionComponent } from './question.component';
-import { QuestionPageComponent } from './question-page/question-page.component';
-import { ReviewQuestionPageComponent } from './review-question-page/review-question-page.component';
+import { QuestionComponent } from './question/question.component';
 
 const routes: Routes = [
   { path: '', component: QuestionComponent}
@@ -17,7 +15,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [QuestionComponent, QuestionPageComponent, ReviewQuestionPageComponent]
+  declarations: [QuestionComponent]
 })
 
 export class QuestionModule { }

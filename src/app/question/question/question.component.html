@@ -1,0 +1,18 @@
+<div class="jumbotron">
+  <div *ngIf="loginService.isLoggedIn && !questionBankService.isNoQuestions()">
+    <!--<app-question-page
+      *ngIf="!questionBankService.isAttempted()"
+      [currQuesIndex]="currQuesIndex"
+      [currQuestion]="currQuestion"
+      (guessedAnswer)="setGuessedAnswer($event)">
+    </app-question-page>
+
+    <app-review-question-page
+      *ngIf="questionBankService.isAttempted()"
+      [currQuesIndex]="currQuesIndex"
+      [currQuestion]="currQuestion"
+      (propagateQuestion)="moveToNextQuestion($event)">
+    </app-review-question-page>-->
+  </div>
+  <!--<app-error> </app-error>-->
+</div>

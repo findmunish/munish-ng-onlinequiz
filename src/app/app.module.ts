@@ -13,17 +13,17 @@ import { LoginService } from './services/login.service';
 import { ErrorsComponent } from './errors/errors.component';
 
 @NgModule({
-imports: [
+  imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule
   ],
+  exports: [ ErrorsComponent ],
   declarations: [
     AppComponent,
-    HelloComponent,
-    ErrorsComponent
+    HelloComponent
   ],
   providers: [
     QuestionBankService,

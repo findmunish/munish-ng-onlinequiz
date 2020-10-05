@@ -1,5 +1,5 @@
 <div *ngIf="!questionBankService.isNoQuestions() && questionBankService.isAttempted()">
-  <h5 class="card-title">Your Score is <span>{{questionBankService.getNumCorrect()}}/{{questionBankService.getNumQuestions()}}</span></h5>
+  <h5 class="card-title">Reviewing question number: {{currQuesIndex + 1}} </h5>
   <div class="list-group">
     <div class="list-group-item">
       <div class="question"><span>{{currQuesIndex + 1}}. </span>{{currQuestion.question}}</div>

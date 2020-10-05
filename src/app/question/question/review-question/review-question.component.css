@@ -3,6 +3,10 @@
   pointer-events: none;
 }
 
+.card {
+  margin-bottom: 20px;
+}
+
 .list-group-item.info{
     background: #17a2b8;
 }

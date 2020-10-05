@@ -1,4 +1,9 @@
 <div *ngIf="!questionBankService.isNoQuestions() && questionBankService.isAttempted()">
+  <div class="btn-group mb-3" role="group" aria-label="Basic example">
+    <span (disabled)="true" class="btn btn-sm btn-info spacing">Correct Answer</span>
+    <span (disabled)="true" class="btn btn-sm btn-danger spacing">Answered Incorrectly</span>
+    <span (disabled)="true" class="btn btn-sm btn-success spacing">Answered Correctly</span>
+  </div>
   <h5 class="card-title">Reviewing question number: {{currQuesIndex + 1}} </h5>
   <div class="list-group">
     <div class="list-group-item">

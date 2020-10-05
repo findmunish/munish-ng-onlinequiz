@@ -3,7 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { REGISTERED_USERS } from '../../data-store/registeredUsers';
 import { LoginService } from '../../services/login.service';
-import { routingService } from '../../services/routing.service';
+import { RoutingService } from '../../services/routing.service';
 import { QuestionBankService } from '../../services/question-bank.service';
 
 @Component({

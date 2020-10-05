@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     this.loginService.loginObj = {name: '', isLoggedIn: false};
     this.alertMessage = 'Invalid Credentials!';
     if(index !== -1) {
-      this.loginService.loginObj = {name: this.registeredUsers[index], isLoggedIn: true};
+      this.loginService.loginObj = {name: this.registeredUsers[index].username, isLoggedIn: true};
       this.alertMessage = 'Valid Credentials!';
       this.questionBankService.setQuestionBank();
       this.router.navigateByUrl(this.routingService.QUIZ);

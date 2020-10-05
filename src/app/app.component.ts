@@ -30,4 +30,7 @@ export class AppComponent  {
     let toNavigateRoute = !this.loginService.loginObj.isLoggedIn ? this.routingService.LOGIN : this.router.url;
     this.router.navigateByUrl(toNavigateRoute);
   }
+  getLoginButtonName() {
+    return this.loginService.loginObj.name === '' ? 'Login' : this.loginService.loginObj.name.toUpperCase();
+  }
 }

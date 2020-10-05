@@ -14,7 +14,7 @@
       [disabled]="loginService.loginObj.isLoggedIn"
       routerLink={{routingService.LOGIN}}
       (click)="onLogin()">
-        Login
+        {{getLoginButtonName()}}
     </button>
     <button
       [disabled]="!this.loginService.loginObj.isLoggedIn"

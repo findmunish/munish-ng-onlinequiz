@@ -1,13 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { QuestionBankService } from '../../services/question-bank.service';
+import { QuestionBankService } from '../../../services/question-bank.service';
 
 @Component({
-  selector: 'app-question-page',
-  templateUrl: './question-page.component.html',
-  styleUrls: ['./question-page.component.css']
+  selector: 'app-attempt-question',
+  templateUrl: './attempt-question.component.html',
+  styleUrls: ['./attempt-question.component.css']
 })
-export class QuestionPageComponent implements OnInit {
+export class AttemptQuestionComponent implements OnInit {
   constructor(public questionBankService: QuestionBankService) {}
   @Input() currQuestion: any = {};
   @Input() currQuesIndex: any;

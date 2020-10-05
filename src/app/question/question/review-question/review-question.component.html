@@ -1,0 +1,31 @@
+<div *ngIf="!questionBankService.isNoQuestions() && questionBankService.isAttempted()">
+  <h5 class="card-title">Your Score is <span>{{questionBankService.getNumCorrect()}}/{{questionBankService.getNumQuestions()}}</span></h5>
+  <div class="list-group">
+    <div class="list-group-item">
+      <div class="question"><span>{{currQuesIndex + 1}}. </span>{{currQuestion.question}}</div>
+      <div class="answers">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let answer of currQuestion.answers; let i = index;" [ngClass]="{'danger': currQuestion.correctIndex !== i && currQuestion.selectedIndex === i, 'info': currQuestion.correctIndex === i, 'success': currQuestion.correctIndex === i && currQuestion.selectedIndex === i}">
+            <div class="input-group" >
+              <div class="input-group-prepend">
+                <label class="input-group-text">
+                  <input type="radio" [checked]="currQuestion.selectedIndex === i" aria-label="Radio button for following text input" disabled>
+                </label>
+              </div>
+              <input type="text" class="form-control" aria-label="Text input with radio button" [value]="answer" disabled>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <span *ngIf="currQuesIndex < questionBankService.getNumQuestions()-1">
+    <button class="btn btn-success spacing" (click)="onNextQuestion(1)">Next Question </button>
+  </span>
+  <span *ngIf="currQuesIndex > 0">
+  <button class="btn btn-success spacing" (click)="onNextQuestion(-1)">Previous Question</button>
+  </span>
+  <span *ngIf="currQuesIndex===0 || currQuesIndex===questionBankService.getNumQuestions()-1">
+  <button class="btn btn-success spacing" (click)="onNextQuestion(questionBankService.getNumQuestions()+1)">Back Page</button>
+  </span>
+</div>

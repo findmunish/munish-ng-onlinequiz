@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 import { QuestionComponent } from './question/question.component';
+import { AttemptQuestionComponent } from './question/attempt-question/attempt-question.component';
+import { ReviewQuestionComponent } from './question/review-question/review-question.component';
 
 const routes: Routes = [
   { path: '', component: QuestionComponent}
@@ -15,7 +17,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [QuestionComponent]
+  declarations: [QuestionComponent, AttemptQuestionComponent, ReviewQuestionComponent]
 })
 
 export class QuestionModule { }

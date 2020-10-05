@@ -1,0 +1,8 @@
+<h4>{{questionBank.question}}</h4>
+<form #QuestionaireForm="ngForm" (ngSubmit)="onSubmit(QuestionaireForm.value)">
+  <label *ngFor="let answer of questionBank.answers">
+      <input class="spacing" type="radio" name="answer" [value]="answer" ngModel required #myAnswer="ngModel"/>
+      {{answer}}
+  </label>
+  <input type="submit" [disabled]="QuestionaireForm.invalid" class="btn btn-primary" [ngClass]="{'btn-dark': QuestionaireForm.valid}" value="Submit">
+</form>

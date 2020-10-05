@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
   loginUser() {
     const {username, password} = this.loginForm.value;
     let index = this.registeredUsers.findIndex( regdUser => username.toLowerCase() === regdUser.username.toLowerCase() && password === regdUser.password )
+    this.loginForm.reset();
     this.loginService.isLoggedIn = false;
     this.alertMessage = 'Invalid Credentials!';
     if(index !== -1) {

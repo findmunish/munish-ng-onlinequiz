@@ -5,7 +5,7 @@
   </div>
   <div *ngIf="loginService.loginObj.isLoggedIn && !questionBankService.doQuestionsExist() && questionBankService.isAttempted()">
     <h2>Thank you for appearing in the test!</h2>
-    <h4>Here is your result summary:</h4>
+    <h4>Hi {{loginService.loginObj.name.toUpperCase()}}, here is your result summary:</h4>
     <table style="width:100%" border="0px">
       <tr colspan="2">
         <h1 style="text-alignment:center;">Quiz Results</h1>

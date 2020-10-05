@@ -1,4 +1,4 @@
-<div *ngIf="!questionBankService.isNoQuestions() && questionBankService.isAttempted()">
+<div *ngIf="!questionBankService.doQuestionsExist() && questionBankService.isAttempted()">
   <div class="btn-group mb-3" role="group" aria-label="Basic example">
     <span disabled class="btn btn-sm btn-info spacing">Correct Answer</span>
     <span disabled class="btn btn-sm btn-danger spacing">Answered Incorrectly</span>

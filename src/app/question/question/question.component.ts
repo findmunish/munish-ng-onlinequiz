@@ -20,7 +20,7 @@ export class QuestionComponent implements OnInit {
   currQuestion: any = [];
   ngOnInit(): void {
     this.setCurrentQuestionNum(this.activatedRoute.snapshot.paramMap.get('id') );
-    if(!this.questionBankService.isNoQuestions()) {
+    if(!this.questionBankService.doQuestionsExist()) {
       this.currQuestion = this.questionBankService.questionBank.questions[this.currQuesIndex];
     }
   }
@@ -28,7 +28,7 @@ export class QuestionComponent implements OnInit {
     this.currQuesIndex = parseInt(strId) - 1;
   }
   getNextQuestionIndex(propagateBy) {
-    if ( this.questionBankService.isNoQuestions() ) return this.currQuesIndex;
+    if ( this.questionBankService.doQuestionsExist() ) return this.currQuesIndex;
     let newIndex = this.currQuesIndex + propagateBy;
     return ( newIndex  < this.questionBankService.getNumQuestions() && newIndex >= 0 ? newIndex : -1 ); 
   }

@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <div *ngIf="loginService.loginObj.isLoggedIn && !questionBankService.isNoQuestions() && questionBankService.isAttempted()">
+  <div *ngIf="loginService.loginObj.isLoggedIn && !questionBankService.doQuestionsExist() && questionBankService.isAttempted()">
     <h1>Welcome to the review of your 'Online Quiz Questionarie'</h1>
     <h3>Here we go!</h3>
     <div>
@@ -30,13 +30,13 @@
     <h3>{{message}}</h3>
   </div>
 </div>
-<div class="alert alert-danger" *ngIf="loginService.loginObj.isLoggedIn && questionBankService.isNoQuestions();">
+<div class="alert alert-danger" *ngIf="loginService.loginObj.isLoggedIn && questionBankService.doQuestionsExist();">
   <h1> Questionaire Not Available </h1>
   <div *ngFor="let message of questionBankService.getNoQuestionsMessages();">
     <h3> {{message}}</h3>
   </div>
 </div>
-<div class="alert alert-danger" *ngIf="loginService.loginObj.isLoggedIn && !questionBankService.isNoQuestions() && !questionBankService.isAttempted()">
+<div class="alert alert-danger" *ngIf="loginService.loginObj.isLoggedIn && !questionBankService.doQuestionsExist() && !questionBankService.isAttempted()">
   <h1> Quiz Not Answered </h1>
   <div *ngFor="let message of questionBankService.getIncompleteEvaluationMessages();">
     <h3> {{message}}</h3>

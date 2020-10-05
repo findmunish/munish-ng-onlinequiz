@@ -3,7 +3,7 @@
     <span class="btn btn-sm btn-success spacing">Passed</span>
     <span class="btn btn-sm btn-danger spacing">Failed</span>
   </div>
-  <div *ngIf="loginService.loginObj.isLoggedIn && !questionBankService.isNoQuestions() && questionBankService.isAttempted()">
+  <div *ngIf="loginService.loginObj.isLoggedIn && !questionBankService.doQuestionsExist() && questionBankService.isAttempted()">
     <h2>Thank you for appearing in the test!</h2>
     <h4>Here is your result summary:</h4>
     <table style="width:100%" border="0px">
@@ -52,13 +52,13 @@
     <h3>{{message}}</h3>
   </div>
 </div>
-<div class="alert alert-danger" *ngIf="loginService.loginObj.isLoggedIn && questionBankService.isNoQuestions();">
+<div class="alert alert-danger" *ngIf="loginService.loginObj.isLoggedIn && questionBankService.doQuestionsExist();">
   <h1> Questionaire Not Available </h1>
   <div *ngFor="let message of questionBankService.getNoQuestionsMessages();">
     <h3> {{message}}</h3>
   </div>
 </div>
-<div class="alert alert-danger" *ngIf="loginService.loginObj.isLoggedIn && !questionBankService.isNoQuestions() && !questionBankService.isAttempted()">
+<div class="alert alert-danger" *ngIf="loginService.loginObj.isLoggedIn && !questionBankService.doQuestionsExist() && !questionBankService.isAttempted()">
   <h1> Quiz Not Answered </h1>
   <div *ngFor="let message of questionBankService.getIncompleteEvaluationMessages();">
     <h3> {{message}}</h3>

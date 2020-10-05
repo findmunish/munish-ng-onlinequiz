@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 //import { ErrorListComponent } from '../error-list/error-list.component';
-import { StateService } from '../services/state.service';
+import { LoginService } from '../services/login.service';
 import { QuestionBankService } from '../services/question-bank.service';
 import { RoutesService } from '../services/routes.service';
 
@@ -17,7 +17,7 @@ import { RoutesService } from '../services/routes.service';
 export class QuizComponent implements OnInit, OnDestroy {
   questionaireJsonLink = 'https://api.jsonbin.io/b/5f780373302a837e95736e9a';
   constructor(private httpQuestionaireClient: HttpClient,
-                      public stateService: StateService,
+                      public loginService: LoginService,
                       public questionBankService: QuestionBankService,
                       public routesService: RoutesService,
                       private router: Router) { }

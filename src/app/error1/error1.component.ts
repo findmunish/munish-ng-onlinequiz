@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StateService } from '../services/state.service';
+import { LoginService } from '../services/login.service';
 import { QuestionBankService } from '../services/question-bank.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { QuestionBankService } from '../services/question-bank.service';
 })
 export class Error1Component implements OnInit {
 
-   constructor(public stateService: StateService,
+   constructor(public loginService: LoginService,
               public questionBankService: QuestionBankService) { }
 
   ngOnInit() {

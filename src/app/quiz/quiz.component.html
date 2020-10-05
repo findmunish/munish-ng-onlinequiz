@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <div *ngIf="stateService.isLoggedIn && !questionBankService.isNoQuestions()">
+  <div *ngIf="loginService.isLoggedIn && !questionBankService.isNoQuestions()">
     <h1>Welcome to the 'Online Quiz Questionarie'}}</h1>
     <h3>All the best!</h3>
     <div *ngIf="!questionBankService.isAttempted()">

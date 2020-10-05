@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { StateService } from '../services/state.service';
+import { LoginService } from '../services/login.service';
 import { QuestionBankService } from '../services/question-bank.service';
 import { RoutesService } from '../services/routes.service';
 
@@ -12,7 +12,7 @@ import { RoutesService } from '../services/routes.service';
 })
 export class ResultComponent implements OnInit {
   constructor(private router: Router,
-              public stateService: StateService,
+              public loginService: LoginService,
               public questionBankService: QuestionBankService,
               public routesService: RoutesService) { }
   ngOnInit(): void {

@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <div *ngIf="stateService.isLoggedIn && !questionBankService.isNoQuestions() && questionBankService.isAttempted()">
+  <div *ngIf="loginService.isLoggedIn && !questionBankService.isNoQuestions() && questionBankService.isAttempted()">
     <h1>Welcome to the review of your 'Online Quiz Questionarie'</h1>
     <h3>Here we go!</h3>
     <div>
@@ -24,19 +24,19 @@
   </div>
 
 </div>
-<div class="alert alert-danger" *ngIf="!stateService.isLoggedIn">
+<div class="alert alert-danger" *ngIf="!loginService.isLoggedIn">
   <h1> Login Failure </h1>
-  <div *ngFor="let message of stateService.getLoginFailMessages();">
+  <div *ngFor="let message of loginService.getLoginFailMessages();">
     <h3>{{message}}</h3>
   </div>
 </div>
-<div class="alert alert-danger" *ngIf="stateService.isLoggedIn && questionBankService.isNoQuestions();">
+<div class="alert alert-danger" *ngIf="loginService.isLoggedIn && questionBankService.isNoQuestions();">
   <h1> Questionaire Not Available </h1>
   <div *ngFor="let message of questionBankService.getNoQuestionsMessages();">
     <h3> {{message}}</h3>
   </div>
 </div>
-<div class="alert alert-danger" *ngIf="stateService.isLoggedIn && !questionBankService.isNoQuestions() && !questionBankService.isAttempted()">
+<div class="alert alert-danger" *ngIf="loginService.isLoggedIn && !questionBankService.isNoQuestions() && !questionBankService.isAttempted()">
   <h1> Quiz Not Answered </h1>
   <div *ngFor="let message of questionBankService.getIncompleteEvaluationMessages();">
     <h3> {{message}}</h3>

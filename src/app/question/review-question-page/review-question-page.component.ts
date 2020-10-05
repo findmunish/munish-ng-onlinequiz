@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { StateService } from '../../services/state.service';
 import { QuestionBankService } from '../../services/question-bank.service';
 
 @Component({
@@ -10,8 +9,7 @@ import { QuestionBankService } from '../../services/question-bank.service';
 })
 export class ReviewQuestionPageComponent implements OnInit {
 
-  constructor(public stateService: StateService,
-            public questionBankService: QuestionBankService) {}
+  constructor(public questionBankService: QuestionBankService) {}
   @Input() currQuestion: any = {};
   @Input() currQuesIndex: number;
   @Input() isTestAttempted: boolean;

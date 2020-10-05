@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <div *ngIf="stateService.isLoggedIn && !questionBankService.isNoQuestions()">
+  <div *ngIf="loginService.isLoggedIn && !questionBankService.isNoQuestions()">
     <app-question-page
       *ngIf="!questionBankService.isAttempted()"
       [currQuesIndex]="currQuesIndex"

@@ -12,23 +12,23 @@
       </tr>
       <tr>
         <th>Total Questions</th>
-        <td>{{questionBankService.getNumQuestions()}}</td>
+        <th>{{questionBankService.getNumQuestions()}}</th>
       </tr>
       <tr>
         <th>Attempted</th>
-        <td>{{questionBankService.getNumAttempted()}}</td>
+        <th>{{questionBankService.getNumAttempted()}}</th>
       </tr>
       <tr>
         <th>Correct</th>
-        <td>{{questionBankService.getNumCorrect()}}</td>
+        <th>{{questionBankService.getNumCorrect()}}</th>
       </tr>
       <tr>
         <th>Percentage</th>
-        <td [ngStyle]="{backgroundColor:getBgColor()}">{{questionBankService.getPercentage()}} %</td>
+        <th [ngStyle]="{backgroundColor:getBgColor()}">{{questionBankService.getPercentage()}} %</th>
       </tr>
       <tr>
         <th>Result</th>
-        <td [ngStyle]="{backgroundColor:getBgColor()}">{{questionBankService.getResult().toUpperCase()}}</td>
+        <th [ngStyle]="{backgroundColor:getBgColor()}">{{questionBankService.getResult().toUpperCase()}}</th>
       </tr>
     </table>
     <div>

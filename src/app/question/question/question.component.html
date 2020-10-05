@@ -15,17 +15,17 @@
     </app-review-question>
   </div>
   <div *ngIf="!loginService.isLoggedIn">
-    <div *ngFor="let message in loginService.getLoginFailMessages()">
+    <div *ngFor="let message of loginService.getLoginFailMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
   </div>
   <div *ngIf="loginService.isLoggedIn && questionBankService.isNoQuestions()">
-    <div *ngFor="let message in questionBankService.getNoQuestionsMessages()">
+    <div *ngFor="let message of questionBankService.getNoQuestionsMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
   </div>
   <div *ngIf="loginService.isLoggedIn && !questionBankService.isNoQuestions() && !questionBankService.isAttempted()">
-    <div *ngFor="let message in questionBankService.getIncompleteEvaluationMessages()">
+    <div *ngFor="let message of questionBankService.getIncompleteEvaluationMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
   </div>

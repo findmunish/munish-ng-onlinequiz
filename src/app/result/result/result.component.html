@@ -1,4 +1,9 @@
 <div class="jumbotron">
+  <!--<div class="btn-group mb-3" role="group" aria-label="Basic example">
+    <span disabled class="btn btn-sm btn-info spacing">Correct Answer</span>
+    <span disabled class="btn btn-sm btn-danger spacing">Answered Incorrectly</span>
+    <span disabled class="btn btn-sm btn-success spacing">Answered Correctly</span>
+  </div>-->
   <div *ngIf="loginService.isLoggedIn && !questionBankService.isNoQuestions() && questionBankService.isAttempted()">
     <h2>Thank you for appearing in the test!</h2>
     <h4>Here is your result summary:</h4>
@@ -21,6 +26,10 @@
       <tr>
         <th>Percentage</th>
         <td>{{questionBankService.getPercentage()}} %</td>
+      </tr>
+      <tr>
+        <th>Result</th>
+        <td>{{questionBankService.getResult()}} %</td>
       </tr>
     </table>
     <div>

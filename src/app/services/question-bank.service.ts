@@ -50,6 +50,9 @@ export class QuestionBankService {
   getPercentage() {
     return this.getNumCorrect() * 100 / this.getNumQuestions();
   }
+  getResult() {
+    return this.getPercentage() >= 40 ? 'Passed': 'Failed';
+  }
   /*checkTestAttempt() {
     this.isTestAttempted.next(this.isAttempted());
     return this.isTestAttempted;

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from "rxjs";
+//import { BehaviorSubject } from "rxjs";
 import { QUESTION_REPO } from '../data-store/questionsRepository';
 
 @Injectable()
 export class QuestionBankService {
 
   questionBank: any = [];
-  isTestAttempted = new BehaviorSubject<boolean>(false);
+  //isTestAttempted = new BehaviorSubject<boolean>(false);
   numQuestionsAttempted = 0;
   constructor() { }
   isObjectEmpty(obj) {
@@ -50,10 +50,10 @@ export class QuestionBankService {
   getPercentage() {
     return this.getNumCorrect() * 100 / this.getNumQuestions();
   }
-  checkTestAttempt() {
+  /*checkTestAttempt() {
     this.isTestAttempted.next(this.isAttempted());
     return this.isTestAttempted;
-  }
+  }*/
   getNoQuestionsMessages() {
     return ['Cannot fetch questions from server :-(', 'Please come back later!'];
   }

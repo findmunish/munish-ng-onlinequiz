@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+//import { Subscription } from 'rxjs';
 
 //import { ErrorListComponent } from '../error-list/error-list.component';
 import { LoginService } from '../../services/login.service';
@@ -13,25 +13,25 @@ import { RoutingService } from '../../services/routing.service';
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css']
 })
-export class QuizComponent implements OnInit, OnDestroy {
+export class QuizComponent implements OnInit/*, OnDestroy*/ {
   questionaireJsonLink = 'https://api.jsonbin.io/b/5f780373302a837e95736e9a';
   constructor(private httpQuestionaireClient: HttpClient,
               public loginService: LoginService,
               public questionBankService: QuestionBankService,
               public routingService: RoutingService,
               private router: Router) { }
-  isTestAttempted = false;
-  isTestAttempted$: Subscription;
+  //isTestAttempted = false;
+  //isTestAttempted$: Subscription;
   ngOnInit() {
-      this.isTestAttempted$ = this.questionBankService.isTestAttempted.subscribe(res => {
+      /*this.isTestAttempted$ = this.questionBankService.isTestAttempted.subscribe(res => {
         this.isTestAttempted = res;
-      });
+      });*/
       // this.addToQuestionaireList()
   }
-  ngOnDestroy() {
+  /*ngOnDestroy() {
     this.questionBankService.isTestAttempted.next(false);
     this.isTestAttempted$.unsubscribe();
-  }
+  }*/
   /*addToQuestionaireList() {
     if (this.questionBankService.questions.length > 0) {
       this.questionBankService.questions.forEach(q => q.isShow = false);

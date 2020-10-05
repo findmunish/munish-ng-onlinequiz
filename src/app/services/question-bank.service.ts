@@ -4,9 +4,7 @@ import { QUESTION_REPO } from '../data-store/questionsRepository';
 
 @Injectable()
 export class QuestionBankService {
-
   questionBank: any = [];
-  //isTestAttempted = new BehaviorSubject<boolean>(false);
   numQuestionsAttempted = 0;
   constructor() { }
   isObjectEmpty(obj) {
@@ -30,7 +28,6 @@ export class QuestionBankService {
   isAttempted() {
     if (this.isNoQuestions()) return false;
     return (this.numQuestionsAttempted === this.getNumQuestions()) ? true : false;
-    //return (this.getNumAttempted() === this.getNumQuestions()) ? true : false;
   }
   getNumQuestions() {
     if (this.isNoQuestions()) return 0;
@@ -39,13 +36,10 @@ export class QuestionBankService {
   getNumAttempted() {
     if (this.isNoQuestions()) return 0;
     return this.numQuestionsAttempted;
-    //let attemptedList = this.questionBank.questions.filter(q => q.selectedIndex);
-    //return attemptedList.length;
   }
   getNumCorrect() {
     if (this.isNoQuestions()) return 0;
-    console.log('questionBank: ', this.questionBank.questions);
-    let correctList = this.questionBank.questions.filter(q => q.selectedIndex === q.correctIndex); 
+     let correctList = this.questionBank.questions.filter(q => q.selectedIndex === q.correctIndex); 
     return correctList.length;
   }
   getPercentage() {
@@ -54,17 +48,13 @@ export class QuestionBankService {
   getResult() {
     return this.getPercentage() >= 40 ? 'Passed': 'Failed';
   }
-  /*checkTestAttempt() {
-    this.isTestAttempted.next(this.isAttempted());
-    return this.isTestAttempted;
-  }*/
   getNoQuestionsMessages() {
     return ['Cannot fetch questions from server :-(', 'Please come back later!'];
   }
   getIncompleteEvaluationMessages() {
     return ['Cannot evaluate now!', 'Please complete the quiz first :)'];
   }
-  evaluateResults() {
+  /*evaluateResults() {
     if (this.isAttempted() === false) {
       return false;
     }
@@ -74,5 +64,5 @@ export class QuestionBankService {
         this.questionBank.questions[i].isCorrect = true;
       }
     }
-  }
+  }*/
 }

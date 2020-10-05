@@ -15,7 +15,7 @@ export class ResultComponent implements OnInit {
               public loginService: LoginService,
               public questionBankService: QuestionBankService,
               public routingService: RoutingService) { }
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   OnReviewTest() {}
+  OnBackPage() {}
 }

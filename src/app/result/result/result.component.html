@@ -30,6 +30,12 @@
         (click)="OnReviewTest()">
           Review Test
       </button>
+      <button
+        class="btn btn-primary spacing"
+        routerLink={{routingService.QUIZ}}
+        (click)="OnBackPage()">
+          Back Page
+      </button>
     </div>
 </div>
 <div class="alert alert-danger" *ngIf="!loginService.isLoggedIn">

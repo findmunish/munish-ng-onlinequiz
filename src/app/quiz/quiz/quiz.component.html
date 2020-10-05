@@ -24,28 +24,20 @@
         View Results
     </button>
   </div>
-  <app-error-list></app-error-list>
-  <!--<app-error> </app-error>-->
+  <div *ngIf="!loginService.isLoggedIn">
+    <div *ngFor="let message in loginService.getLoginFailMessages()">
+      <h3 class="alert alert-danger"> {{message}}</h3>
+    </div>
+  </div>
+  <div *ngIf="loginService.isLoggedIn && questionBankService.isNoQuestions()">
+    <div *ngFor="let message in questionBankService.getNoQuestionsMessages()">
+      <h3 class="alert alert-danger"> {{message}}</h3>
+    </div>
+  </div>
+  <div *ngIf="loginService.isLoggedIn && !questionBankService.isNoQuestions() && !questionBankService.isAttempted()">
+    <div *ngFor="let message in questionBankService.getIncompleteEvaluationMessages()">
+      <h3 class="alert alert-danger"> {{message}}</h3>
+    </div>
+  </div>
 </div>
-<!--<button
-    class="btn btn-primary spacing"
-    routerLink='/question/1'>
-      testing button
-  </button>-->
-<!--
-<h4>Displaying Question Database</h4>
 
-<table style="width:100%" border="1px">
-  <h1>Questionaire</h1>
-  <tr>
-    <th>Question</th>
-    <th>Answer</th>
-    <th>Correct Index</th>
-  </tr>
-  <tr *ngFor = "let question of fetchedQuestionsJson.questions">
-    <td> {{question.question}} </td>
-    <td >{{question.answers}} </td>
-    <td> {{question.correctIndex}} </td>
-  </tr>
-</table>
--->

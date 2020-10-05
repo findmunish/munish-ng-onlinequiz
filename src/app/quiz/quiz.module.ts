@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 import { QuizComponent } from './quiz/quiz.component';
-import { ErrorListComponent } from '../error-list/error-list.component';
 import { QuestionaireComponent } from './quiz/questionaire/questionaire.component';
 
 const routes: Routes = [
@@ -17,6 +16,6 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [QuizComponent, ErrorListComponent, QuestionaireComponent]
+  declarations: [QuizComponent, QuestionaireComponent]
 })
 export class QuizModule { }

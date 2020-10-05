@@ -10,7 +10,6 @@ import { HelloComponent } from './hello.component';
 import { QuestionBankService } from './services/question-bank.service';
 import { RoutingService } from './services/routing.service';
 import { LoginService } from './services/login.service';
-//import { ErrorListComponent } from './error-list/error-list.component';
 
 @NgModule({
 imports: [
@@ -22,8 +21,7 @@ imports: [
   ],
   declarations: [
     AppComponent,
-    HelloComponent,
-    //ErrorListComponent
+    HelloComponent
   ],
   providers: [
     QuestionBankService,

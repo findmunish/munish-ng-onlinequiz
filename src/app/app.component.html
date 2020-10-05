@@ -11,13 +11,13 @@
     </button>
     <button
       class="btn btn-primary spacing"
-      [disabled]="loginService.isLoggedIn"
+      [disabled]="loginService.loginObj.isLoggedIn"
       routerLink={{routingService.LOGIN}}
       (click)="onLogin()">
         Login
     </button>
     <button
-      [disabled]="!this.loginService.isLoggedIn"
+      [disabled]="!this.loginService.loginObj.isLoggedIn"
       class="btn btn-primary spacing"
       routerLink=''
       (click)="onLogout()">

@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm.valueChanges.subscribe((field) => {
-      this.loginService.isLoggedIn = false;
+      this.loginService.loginObj = {name: '', isLoggedIn: false};
       this.alertMessage = '';
       this.disableSubmitBtn = !(field.username && field.password);
     })
@@ -39,10 +39,10 @@ export class LoginComponent implements OnInit {
     const {username, password} = this.loginForm.value;
     let index = this.registeredUsers.findIndex( regdUser => username.toLowerCase() === regdUser.username.toLowerCase() && password === regdUser.password )
     this.loginForm.reset();
-    this.loginService.isLoggedIn = false;
+    this.loginService.loginObj = {name: '', isLoggedIn: false};
     this.alertMessage = 'Invalid Credentials!';
     if(index !== -1) {
-      this.loginService.isLoggedIn = true;
+      this.loginService.loginObj = {name: this.registeredUsers[index], isLoggedIn: true};
       this.alertMessage = 'Valid Credentials!';
       this.questionBankService.setQuestionBank();
       this.router.navigateByUrl(this.routingService.QUIZ);

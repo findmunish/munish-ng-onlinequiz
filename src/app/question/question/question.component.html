@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <div *ngIf="loginService.isLoggedIn && !questionBankService.isNoQuestions()">
+  <div *ngIf="loginService.loginObj.isLoggedIn && !questionBankService.isNoQuestions()">
     <app-attempt-question
       *ngIf="!questionBankService.isAttempted()"
       [currQuesIndex]="currQuesIndex"
@@ -14,17 +14,17 @@
       (propagateQuestion)="moveToNextQuestion($event)">
     </app-review-question>
   </div>
-  <div *ngIf="!loginService.isLoggedIn">
+  <div *ngIf="!loginService.loginObj.isLoggedIn">
     <div *ngFor="let message of loginService.getLoginFailMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
   </div>
-  <div *ngIf="loginService.isLoggedIn && questionBankService.isNoQuestions()">
+  <div *ngIf="loginService.loginObj.isLoggedIn && questionBankService.isNoQuestions()">
     <div *ngFor="let message of questionBankService.getNoQuestionsMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
   </div>
-  <!--<div *ngIf="loginService.isLoggedIn && !questionBankService.isNoQuestions() && !questionBankService.isAttempted()">
+  <!--<div *ngIf="loginService.loginObj.isLoggedIn && !questionBankService.isNoQuestions() && !questionBankService.isAttempted()">
     <div *ngFor="let message of questionBankService.getIncompleteEvaluationMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>

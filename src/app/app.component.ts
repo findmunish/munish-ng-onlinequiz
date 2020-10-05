@@ -12,8 +12,6 @@ import { filter } from 'rxjs/operators';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-
-  isLoggedIn = this.loginService.isLoggedIn;
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
               public loginService: LoginService,
@@ -24,12 +22,12 @@ export class AppComponent  {
   }
   onLogin() {}
   onLogout() {
-    this.loginService.isLoggedIn = false;
+    this.loginService.loginObj = {name: '', isLoggedIn: false};
     this.questionBankService.resetQuestionBank();
     this.router.navigateByUrl(this.routingService.LOGIN);
   }
   onHome() {
-    let toNavigateRoute = !this.loginService.isLoggedIn ? this.routingService.LOGIN : this.router.url;
+    let toNavigateRoute = !this.loginService.loginObj.isLoggedIn ? this.routingService.LOGIN : this.router.url;
     this.router.navigateByUrl(toNavigateRoute);
   }
 }

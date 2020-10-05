@@ -1,4 +1,4 @@
-export const QUESTION_REPO =
+/*export const QUESTION_REPO =
 {
   "questions":
   [
@@ -23,19 +23,18 @@ export const QUESTION_REPO =
       "correctIndex": 1
     },
     {
-      "question": "What is the scientific name of a butterfly?",
+      "question": "Who are the actors in The Internship?",
       "answers": [
-        "Apis",
-        "Coleoptera",
-        "Formicidae",
-        "Rhopalocera"
+        "Ben Stiller, Jonah Hill",
+        "Courteney Cox, Matt LeBlanc",
+        "Kaley Cuoco, Jim Parsons",
+        "Vince Vaughn, Owen Wilson"
       ],
       "correctIndex": 3
     }
   ]
-}
-/*
-export const QUESTION_REPO =
+}*/
+/*export const QUESTION_REPO =
 {
   "questions":
   [
@@ -100,9 +99,7 @@ export const QUESTION_REPO =
       "correctIndex": 2
     }
   ]
-};
-*/
-/*
+};*/
 export const QUESTION_REPO =
       {
         "questions":
@@ -171,4 +168,3 @@ export const QUESTION_REPO =
           }
         ]
       }
-*/

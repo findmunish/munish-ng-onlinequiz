@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 //import { Subscription } from 'rxjs';
 
-//import { ErrorListComponent } from '../error-list/error-list.component';
+//import { ErrorListComponent } from '../../error-list/error-list.component';
 import { LoginService } from '../../services/login.service';
 import { QuestionBankService } from '../../services/question-bank.service';
 import { RoutingService } from '../../services/routing.service';

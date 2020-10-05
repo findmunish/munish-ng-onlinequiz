@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
-//import { ErrorListComponent } from '../../error-list/error-list.component';
+import { ErrorsComponent } from '../../errors/errors.component';
 import { LoginService } from '../../services/login.service';
 import { QuestionBankService } from '../../services/question-bank.service';
 import { RoutingService } from '../../services/routing.service';

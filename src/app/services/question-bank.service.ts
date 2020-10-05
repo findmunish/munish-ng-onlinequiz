@@ -51,9 +51,9 @@ export class QuestionBankService {
   getNoQuestionsMessages() {
     return ['Cannot fetch questions from server :-(', 'Please come back later!'];
   }
-  /*getIncompleteEvaluationMessages() {
+  getIncompleteEvaluationMessages() {
     return ['Cannot evaluate now!', 'Please complete the quiz first :)'];
-  }*/
+  }
   /*evaluateResults() {
     if (this.isAttempted() === false) {
       return false;

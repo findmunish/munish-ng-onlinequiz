@@ -8,15 +8,15 @@
 }
 
 .list-group-item.info{
-    background: #17a2b8;
+  background: #17a2b8;
 }
 
 .list-group-item.danger{
-    background: #dc3545;
+  background: #dc3545;
 }
 
 .list-group-item.success {
-    background: #28a745;
+  background: #28a745;
 }
 
 .answers .list-group{

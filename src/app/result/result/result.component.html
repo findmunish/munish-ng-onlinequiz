@@ -24,11 +24,11 @@
       </tr>
       <tr>
         <th>Percentage</th>
-        <td style="color:white" [ngStyle]="{backgroundColor:getBgColor()};">{{questionBankService.getPercentage()}} %</td>
+        <td [ngStyle]="{backgroundColor:getBgColor()};">{{questionBankService.getPercentage()}} %</td>
       </tr>
       <tr>
         <th>Result</th>
-        <td style="color:white" [ngStyle]="{backgroundColor:getBgColor()}">{{questionBankService.getResult()}}</td>
+        <td [ngStyle]="{backgroundColor:getBgColor()}">{{questionBankService.getResult().toUpperCase()}}</td>
       </tr>
     </table>
     <div>

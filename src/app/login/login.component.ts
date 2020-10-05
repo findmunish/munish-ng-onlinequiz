@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { REGISTERED_USERS } from './registeredUsers';
+import { REGISTERED_USERS } from '../data-store/registeredUsers';
 import { StateService } from '../services/state.service';
 import { RoutesService } from '../services/routes.service';
 import { QuestionBankService } from '../services/question-bank.service';

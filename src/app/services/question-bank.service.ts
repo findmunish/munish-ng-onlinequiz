@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from "rxjs";
-import { QUESTION_REPO } from './questionsRepository';
+import { QUESTION_REPO } from '../data-store/questionsRepository';
 
 @Injectable()
 export class QuestionBankService {

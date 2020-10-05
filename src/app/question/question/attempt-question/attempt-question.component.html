@@ -1,5 +1,5 @@
 <div *ngIf="!questionBankService.isAttempted()">
-  <h4>{{currQuesIndex + 1}}): {{currQuestion && currQuestion.question}}</h4>
+  <h4>{{currQuesIndex + 1}}: {{currQuestion && currQuestion.question}}</h4>
   <form #QuestionaireForm="ngForm" (ngSubmit)="onSubmit(QuestionaireForm.value)">
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let answer of currQuestion.answers; let idx = index;">

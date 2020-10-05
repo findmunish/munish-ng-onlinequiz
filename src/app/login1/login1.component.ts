@@ -11,7 +11,7 @@ import { QuestionBankService } from '../services/question-bank.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class Login1Component implements OnInit {
   registeredUsers: any = REGISTERED_USERS;
   loginForm = this.formBuilder.group({
     username: [''],

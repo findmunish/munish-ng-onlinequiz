@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-//import { Subscription } from 'rxjs';
 
 //import { ErrorListComponent } from '../../error-list/error-list.component';
 import { LoginService } from '../../services/login.service';

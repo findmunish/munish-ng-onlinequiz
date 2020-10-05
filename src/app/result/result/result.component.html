@@ -1,7 +1,7 @@
 <div class="jumbotron">
   <div class="btn-group mb-3" role="group" aria-label="Basic example">
-    <span disabled class="btn btn-sm btn-success spacing">Passed</span>
-    <span disabled class="btn btn-sm btn-danger spacing">Failed</span>
+    <span class="btn btn-sm btn-success spacing">Passed</span>
+    <span class="btn btn-sm btn-danger spacing">Failed</span>
   </div>
   <div *ngIf="loginService.isLoggedIn && !questionBankService.isNoQuestions() && questionBankService.isAttempted()">
     <h2>Thank you for appearing in the test!</h2>
@@ -24,11 +24,11 @@
       </tr>
       <tr>
         <th>Percentage</th>
-        <td>{{questionBankService.getPercentage()}} %</td>
+        <td [ngStyle]="{backgroundColor:getBgColor()}">{{questionBankService.getPercentage()}} %</td>
       </tr>
       <tr>
         <th>Result</th>
-        <td>{{questionBankService.getResult()}}</td>
+        <td [ngStyle]="{backgroundColor:getBgColor()}">{{questionBankService.getResult()}}</td>
       </tr>
     </table>
     <div>

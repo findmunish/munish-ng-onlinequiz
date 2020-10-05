@@ -18,4 +18,7 @@ export class ResultComponent implements OnInit {
   ngOnInit(): void {}
   OnReviewTest() {}
   OnBackPage() {}
+  getBgColor() {
+    return this.questionBankService.getResult().toLowerCase() === 'passed' ? 'green' : 'red';
+  }
 }

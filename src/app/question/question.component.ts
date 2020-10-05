@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 
 import { LoginService } from '../services/login.service';
 import { QuestionBankService } from '../services/question-bank.service';
-import { RoutesService } from '../services/routes.service';
+import { RoutingService } from '../services/routing.service';
 //import { ErrorComponent } from '../error/error.component';
 
 @Component({
@@ -17,7 +17,7 @@ export class QuestionComponent implements OnInit, OnDestroy {
               private router:Router,
               public loginService: LoginService,
               public questionBankService: QuestionBankService,
-              public routesService: RoutesService) {}
+              public routingService: RoutingService) {}
   currQuesIndex = -1;
   currQuestion: any = [];
   isTestAttempted = false;
@@ -48,10 +48,10 @@ export class QuestionComponent implements OnInit, OnDestroy {
     let routeEndPoint = '';
     if (this.currQuesIndex !== -1) {
       this.currQuestion = this.questionBankService.questionBank && this.questionBankService.questionBank.questions[this.currQuesIndex];
-      routeEndPoint = `${this.routesService.QUESTION_PARTIAL}/${this.currQuesIndex + 1}`;
+      routeEndPoint = `${this.routingService.QUESTION_PARTIAL}/${this.currQuesIndex + 1}`;
     } else {
       this.questionBankService.checkTestAttempt();
-      routeEndPoint = `${this.routesService.QUIZ}`;
+      routeEndPoint = `${this.routingService.QUIZ}`;
     }
     this.router.navigateByUrl(routeEndPoint);
   }

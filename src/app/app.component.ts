@@ -2,7 +2,7 @@ import { Component, VERSION } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { LoginService } from './services/login.service';
 import { QuestionBankService } from './services/question-bank.service';
-import { RoutesService } from './services/routes.service';
+import { RoutingService } from './services/routing.service';
 
 @Component({
   selector: 'my-app',
@@ -15,7 +15,7 @@ export class AppComponent  {
               private activatedRoute: ActivatedRoute,
               public loginService: LoginService,
               public questionBankService: QuestionBankService,
-              public routesService: RoutesService) {}
+              public routingService: RoutingService) {}
   ngOnInit() {}
   onLogin() {}
   onLogout() {

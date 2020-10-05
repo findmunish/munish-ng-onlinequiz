@@ -3,7 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { REGISTERED_USERS } from '../../data-store/registeredUsers';
 import { LoginService } from '../../services/login.service';
-import { RoutesService } from '../../services/routes.service';
+import { routingService } from '../../services/routing.service';
 import { QuestionBankService } from '../../services/question-bank.service';
 
 @Component({
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   @Output() sendRegisteredUserList = new EventEmitter()
   constructor(private formBuilder: FormBuilder,
               public loginService: LoginService,
-              public routesService: RoutesService,
+              public routingService: RoutingService,
               public questionBankService: QuestionBankService,
               private router: Router) { }
 
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
       this.loginService.isLoggedIn = true;
       this.alertMessage = 'Valid Credentials!';
       this.questionBankService.setQuestionBank();
-      this.router.navigateByUrl(this.routesService.QUIZ);
+      this.router.navigateByUrl(this.routingService.QUIZ);
     }
   }
 }

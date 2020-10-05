@@ -13,13 +13,13 @@
   <div *ngIf="questionBankService.isAttempted() && !questionBankService.isNoQuestions()">
     <button
       class="btn btn-primary spacing"
-      routerLink={{routesService.REVIEW}}
+      routerLink={{routingService.REVIEW}}
       (click)="OnReviewTest()">
         Review Test
     </button>
     <button
       class="btn btn-primary spacing"
-      routerLink={{routesService.RESULT}}
+      routerLink={{routingService.RESULT}}
       (click)="OnViewTestResults()">
         View Results
     </button>

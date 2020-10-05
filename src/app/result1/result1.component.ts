@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { LoginService } from '../services/login.service';
 import { QuestionBankService } from '../services/question-bank.service';
-import { RoutesService } from '../services/routes.service';
+import { RoutingService } from '../services/routing.service';
 
 @Component({
   selector: 'app-result',
@@ -14,7 +14,7 @@ export class ResultComponent implements OnInit {
   constructor(private router: Router,
               public loginService: LoginService,
               public questionBankService: QuestionBankService,
-              public routesService: RoutesService) { }
+              public routingService: RoutingService) { }
   ngOnInit(): void {
 }
   OnReviewTest() {}

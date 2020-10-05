@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 
 import { LoginService } from '../services/login.service';
 import { QuestionBankService } from '../services/question-bank.service';
-import { RoutesService } from '../services/routes.service';
+import { RoutingService } from '../services/routing.service';
 
 @Component({
   selector: 'app-review',
@@ -15,7 +15,7 @@ export class ReviewComponent implements OnInit, OnDestroy {
   constructor(private router: Router,
             public loginService: LoginService,
             public questionBankService: QuestionBankService,
-            public routesService: RoutesService) { }
+            public routingService: RoutingService) { }
   isTestAttempted = false;
   isTestAttempted$: Subscription;
   ngOnInit() {
@@ -31,6 +31,6 @@ export class ReviewComponent implements OnInit, OnDestroy {
   OnBackPage() {}
   OnBeginReview() {
     let startIndex = 0;
-    this.router.navigateByUrl(`${this.routesService.QUESTION_PARTIAL}/${startIndex+1}`);
+    this.router.navigateByUrl(`${this.routingService.QUESTION_PARTIAL}/${startIndex+1}`);
   }
 }

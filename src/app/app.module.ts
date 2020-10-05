@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { QuestionBankService } from './services/question-bank.service';
-import { RoutesService } from './services/routes.service';
+import { RoutingService } from './services/routing.service';
 import { LoginService } from './services/login.service';
 import { ErrorListComponent } from './error-list/error-list.component';
 
@@ -27,8 +27,8 @@ imports: [
   ],
   providers: [
     QuestionBankService,
-    RoutesService,
-    LoginService
+    LoginService,
+    RoutingService
   ],
   bootstrap:    [ AppComponent ],
 })

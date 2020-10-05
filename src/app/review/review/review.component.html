@@ -1,0 +1,44 @@
+<div class="jumbotron">
+  <div *ngIf="loginService.isLoggedIn && !questionBankService.isNoQuestions() && questionBankService.isAttempted()">
+    <h1>Welcome to the review of your 'Online Quiz Questionarie'</h1>
+    <h3>Here we go!</h3>
+    <div>
+      <button
+        class="btn btn-primary spacing"
+        (click)="OnBeginReview()">
+          Begin Review
+      </button>
+      <button
+      class="btn btn-primary spacing"
+      routerLink={{routesService.RESULT}}
+      (click)="OnViewTestResults()">
+        View Results
+      </button>
+      <button
+      class="btn btn-primary spacing"
+      routerLink={{routesService.QUIZ}}
+      (click)="OnBackPage()">
+        Back Page
+      </button>
+    </div>
+  </div>
+
+</div>
+<div class="alert alert-danger" *ngIf="!loginService.isLoggedIn">
+  <h1> Login Failure </h1>
+  <div *ngFor="let message of loginService.getLoginFailMessages();">
+    <h3>{{message}}</h3>
+  </div>
+</div>
+<div class="alert alert-danger" *ngIf="loginService.isLoggedIn && questionBankService.isNoQuestions();">
+  <h1> Questionaire Not Available </h1>
+  <div *ngFor="let message of questionBankService.getNoQuestionsMessages();">
+    <h3> {{message}}</h3>
+  </div>
+</div>
+<div class="alert alert-danger" *ngIf="loginService.isLoggedIn && !questionBankService.isNoQuestions() && !questionBankService.isAttempted()">
+  <h1> Quiz Not Answered </h1>
+  <div *ngFor="let message of questionBankService.getIncompleteEvaluationMessages();">
+    <h3> {{message}}</h3>
+  </div>
+</div>

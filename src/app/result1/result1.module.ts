@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-
-import { ReviewComponent } from './review/review.component';
+/*
+import { ResultComponent } from './result.component';
 
 const routes: Routes = [
-  { path: '', component: ReviewComponent}
-]
+  { path: '', component: ResultComponent}
+]*/
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    //RouterModule.forChild(routes)
   ],
-  declarations: [ReviewComponent]
+  declarations: []
 })
-export class ReviewModule { }
+export class ResultModule { }

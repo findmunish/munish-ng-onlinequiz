@@ -20,4 +20,5 @@ const routes: Routes = [
   ],
   declarations: [QuizComponent, QuestionaireComponent]
 })
+
 export class QuizModule { }

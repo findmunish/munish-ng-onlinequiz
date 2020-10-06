@@ -3,6 +3,7 @@ import { QUESTION_REPO } from '../data-store/questionsRepository';
 
 @Injectable()
 export class QuestionBankService {
+
   questionBank: any = [];
   numQuestionsAttempted = 0;
   constructor() { }

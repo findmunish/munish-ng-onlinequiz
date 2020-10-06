@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
+import { ErrorsModule } from './errors/errors.module';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { QuestionBankService } from './services/question-bank.service';
@@ -19,6 +20,7 @@ import { LoginService } from './services/login.service';
     HttpClientModule,
     AppRoutingModule
   ],
+  exports: [ErrorsModule],
   declarations: [
     AppComponent,
     HelloComponent

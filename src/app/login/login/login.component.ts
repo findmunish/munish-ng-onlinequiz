@@ -28,11 +28,10 @@ export class LoginComponent implements OnInit {
               private router: Router) { }
   ngOnInit() {
     this.loginForm.valueChanges.subscribe((field) => {
-      this.loginService.loginObj = {name: '', isLoggedIn: false, loginNotification: false};
+      this.loginService.resetLoginObj();
       this.disableSubmitBtn = !(field.username && field.password);
     })
   }
-  checkErrors = {login:false, question:false, evaluate:false};
   loginUser() {
     const {username, password} = this.loginForm.value;
     let index = this.registeredUsers.findIndex( regdUser => username.toLowerCase() === regdUser.username.toLowerCase() && password === regdUser.password )

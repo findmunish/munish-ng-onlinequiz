@@ -10,6 +10,7 @@ import { RoutingService } from './services/routing.service';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
+
   constructor(private router: Router,
               public loginService: LoginService,
               public questionBankService: QuestionBankService,
@@ -19,7 +20,7 @@ export class AppComponent  {
   }
   onLogin() {}
   onLogout() {
-    this.loginService.loginObj.reset();
+    this.loginService.resetLoginObj();
     this.questionBankService.resetQuestionBank();
     this.router.navigateByUrl(this.routingService.LOGIN);
   }

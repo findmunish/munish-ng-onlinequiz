@@ -2,18 +2,11 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class LoginService {
-
-  loginObj = {
-    name: '',
-    isLoggedIn: false,
-    loginNotification: false,
-    reset() {
-      this.name = '';
-      this.isLoggedIn = false;
-      this.loginNotification = false;
-    }
-  };
+  loginObj = {name: '', isLoggedIn: false, loginNotification: false}
   constructor() {}
+  resetLoginObj() {
+      this.loginObj = {name: '', isLoggedIn: false, loginNotification: false};
+  }
   getLoginFailMessages() {
     return ['Sorry! you are not logged in :(', 'Only logged in users can continue!'];
   }

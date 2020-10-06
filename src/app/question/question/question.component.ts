@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
+import { ErrorsComponent } from '../../errors/errors/errors.component';
 import { LoginService } from '../../services/login.service';
 import { QuestionBankService } from '../../services/question-bank.service';
 import { RoutingService } from '../../services/routing.service';

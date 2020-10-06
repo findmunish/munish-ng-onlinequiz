@@ -19,6 +19,9 @@ export class QuizComponent implements OnInit {
               public questionBankService: QuestionBankService,
               public routingService: RoutingService,
               private router: Router) { }
+  checkLoginError = true;
+  checkQuesionsError = true;
+  checkEvaluationError = true;
   ngOnInit() {
   }
   setQuestionBank(question) {

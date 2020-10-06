@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
+import { ErrorsModule } from '../errors/errors.module';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -14,8 +15,10 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    ErrorsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [LoginComponent]
 })
+
 export class LoginModule { }

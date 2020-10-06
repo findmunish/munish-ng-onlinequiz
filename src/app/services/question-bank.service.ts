@@ -55,4 +55,7 @@ export class QuestionBankService {
   getIncompleteEvaluationMessages() {
     return ['Cannot evaluate now!', 'Please complete the quiz first :)'];
   }
+  getQuizRouteEndpointMessage() {
+    return this.isAttempted() ? 'Thanks for attending!' : 'All the best!'
+  }
 }

@@ -8,8 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class QuestionaireComponent implements OnInit {
   fetchedQuestionsJson = [];
   constructor() { }
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
   answer = '';
   @Input() questionBank;
   @Output() updateQuestionBank = new EventEmitter

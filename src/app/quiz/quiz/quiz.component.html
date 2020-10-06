@@ -1,15 +1,13 @@
 <div class="jumbotron">
   <div *ngIf="loginService.loginObj.isLoggedIn && !questionBankService.doQuestionsExist()">
     <h1>Welcome to the 'Online Quiz Questionarie'</h1>
-    <h3 *ngIf="!questionBankService.isAttempted()">All the best!</h3>
-    <h3 *ngIf="questionBankService.isAttempted()">Thanks for attending!</h3>
-    <div *ngIf="!questionBankService.isAttempted()">
-      <button
-        class="btn btn-primary spacing"
-        (click)="OnBeginTest()">
-          BeginTest
-      </button>
-    </div>
+    <h3>{{questionBankService.getQuizRouteEndpointMessage()}}</h3>
+    <button
+      [hidden]="questionBankService.isAttempted()"
+      class="btn btn-primary spacing"
+      (click)="OnBeginTest()">
+        Begin Test
+    </button>
   </div>
   <div *ngIf="questionBankService.isAttempted() && !questionBankService.doQuestionsExist()">
     <button
@@ -25,19 +23,6 @@
         View Results
     </button>
   </div>
-  <app-errors>
-    [checkLoginError]="checkLoginError"
-    [checkQuesionsError]="checkQuesionsError"
-    [checkEvaluationError]="checkEvaluationError"
-  </app-errors>
-  <!--<div *ngIf="!loginService.loginObj.isLoggedIn">
-    <div *ngFor="let message of loginService.getLoginFailMessages()">
-      <h3 class="alert alert-danger"> {{message}}</h3>
-    </div>
-  </div>
-  <div *ngIf="loginService.loginObj.isLoggedIn && questionBankService.doQuestionsExist()">
-    <div *ngFor="let message of questionBankService.getNoQuestionsMessages()">
-      <h3 class="alert alert-danger"> {{message}}</h3>
-    </div>
-  </div>-->
+  
+  <app-errors [checkErrors]="checkErrors"> </app-errors>
 </div>

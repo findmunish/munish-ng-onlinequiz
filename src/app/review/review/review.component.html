@@ -22,23 +22,5 @@
       </button>
     </div>
   </div>
-
-</div>
-<div class="alert alert-danger" *ngIf="!loginService.loginObj.isLoggedIn">
-  <h1> Login Failure </h1>
-  <div *ngFor="let message of loginService.getLoginFailMessages();">
-    <h3>{{message}}</h3>
-  </div>
-</div>
-<div class="alert alert-danger" *ngIf="loginService.loginObj.isLoggedIn && questionBankService.doQuestionsExist();">
-  <h1> Questionaire Not Available </h1>
-  <div *ngFor="let message of questionBankService.getNoQuestionsMessages();">
-    <h3> {{message}}</h3>
-  </div>
-</div>
-<div class="alert alert-danger" *ngIf="loginService.loginObj.isLoggedIn && !questionBankService.doQuestionsExist() && !questionBankService.isAttempted()">
-  <h1> Quiz Not Answered </h1>
-  <div *ngFor="let message of questionBankService.getIncompleteEvaluationMessages();">
-    <h3> {{message}}</h3>
-  </div>
+  <app-errors [checkErrors]="checkErrors"> </app-errors>
 </div>

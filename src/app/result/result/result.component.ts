@@ -11,11 +11,13 @@ import { RoutingService } from '../../services/routing.service';
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent implements OnInit {
+  checkErrors = {loginNotification:false, login:true, question:true, evaluate:true};
   constructor(private router: Router,
               public loginService: LoginService,
               public questionBankService: QuestionBankService,
               public routingService: RoutingService) { }
-  ngOnInit(): void {}
+  ngOnInit() {
+  }
   OnReviewTest() {}
   OnBackPage() {}
   getBgColor() {

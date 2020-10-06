@@ -1,21 +1,28 @@
 <div>
-  <!--<h1> checkLoginError = {{checkLoginError}} </h1>
-  <h1> checkQuesionsError = {{checkQuesionsError}} </h1>
-  <h1> checkEvaluationError = {{checkEvaluationError}} </h1>-->
-  <div *ngIf="checkLoginError && !loginService.loginObj.isLoggedIn">
+  <div *ngIf="checkErrors.loginNotification" style="margin-top: 15px;" class='alert' [ngClass]="loginService.getLoginValidationMessage().class">
+    {{loginService.getLoginValidationMessage().message}}
+    <!--<div style="margin-top: 15px;" *ngIf="alertMessage !== ''">
+      <div class="alert alert-success" role="alert" *ngIf="loginService.loginObj.isLoggedIn">
+        {{alertMessage}}
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="!loginService.loginObj.isLoggedIn">
+        {{alertMessage}}
+      </div>
+    </div>-->
+  </div>
+  <div *ngIf="checkErrors.login && !loginService.loginObj.isLoggedIn">
     <div *ngFor="let message of loginService.getLoginFailMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
   </div>
-  <div *ngIf="checkQuesionsError && loginService.loginObj.isLoggedIn && questionBankService.doQuestionsExist()">
+  <div *ngIf="checkErrors.question && loginService.loginObj.isLoggedIn && questionBankService.doQuestionsExist()">
     <div *ngFor="let message of questionBankService.getNoQuestionsMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
   </div>
-  <div *ngIf="checkEvaluationError && loginService.loginObj.isLoggedIn && !questionBankService.doQuestionsExist() && !questionBankService.isAttempted()">
+  <div *ngIf="checkErrors.evaluate && loginService.loginObj.isLoggedIn && !questionBankService.doQuestionsExist() && !questionBankService.isAttempted()">
     <div *ngFor="let message of questionBankService.getIncompleteEvaluationMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
   </div>
 </div>
-

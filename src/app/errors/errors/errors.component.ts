@@ -9,13 +9,8 @@ import { QuestionBankService } from '../../services/question-bank.service';
   styleUrls: ['./errors.component.css']
 })
 export class ErrorsComponent implements OnInit {
-
   constructor(public loginService: LoginService,
               public questionBankService: QuestionBankService,) { }
-
-  ngOnInit() {
-  }
-  @Input() checkLoginError: boolean = false;
-  @Input() checkQuesionsError: boolean = false;
-  @Input() checkEvaluationError: boolean = false;
+  ngOnInit() {}
+  @Input() checkErrors: any = {loginNotification: false, login:false, question:false, evaluate:false};
 }

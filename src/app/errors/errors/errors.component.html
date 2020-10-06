@@ -1,7 +1,7 @@
 <div>
-  <!--<h1> checkLoginError = {{checkLoginError}} </h1>
+  <h1> checkLoginError = {{checkLoginError}} </h1>
   <h1> checkQuesionsError = {{checkQuesionsError}} </h1>
-  <h1> checkEvaluationError = {{checkEvaluationError}} </h1>-->
+  <h1> checkEvaluationError = {{checkEvaluationError}} </h1>
   <div *ngIf="checkLoginError && !loginService.loginObj.isLoggedIn">
     <div *ngFor="let message of loginService.getLoginFailMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>

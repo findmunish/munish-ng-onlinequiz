@@ -15,7 +15,7 @@ export class ErrorsComponent implements OnInit {
 
   ngOnInit() {
   }
-  @Input() checkLoginError: boolean = false;
-  @Input() checkQuesionsError: boolean = false;
-  @Input() checkEvaluationError: boolean = false;
+  @Input() checkLoginError: boolean;
+  @Input() checkQuesionsError: boolean;
+  @Input() checkEvaluationError: boolean;
 }

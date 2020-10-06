@@ -13,6 +13,7 @@ import { QuestionBankService } from '../../services/question-bank.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   registeredUsers: any = REGISTERED_USERS;
   loginForm = this.formBuilder.group({
     username: [''],
@@ -38,9 +39,12 @@ export class LoginComponent implements OnInit {
     this.loginForm.reset();
     this.loginService.loginObj = {name: '', isLoggedIn: false, loginNotification: true};
     if(index !== -1) {
-      this.loginService.loginObj = {name: this.registeredUsers[index].username, isLoggedIn: true, loginNotification: false};
+      this.loginService.loginObj = {name: this.registeredUsers[index].username, isLoggedIn: true, loginNotification: true};
       this.questionBankService.setQuestionBank();
-      this.router.navigateByUrl(this.routingService.QUIZ);
     }
+  }
+  onStart() {
+    this.loginService.loginObj.loginNotification = false;
+    this.router.navigateByUrl(this.routingService.QUIZ);
   }
 }

@@ -19,6 +19,6 @@
     </div>
 		<button type="submit" [disabled]="disableSubmitBtn" class="btn btn-success">Submit</button>
 	</form>
-
   <app-errors> </app-errors>
+  <button [hidden]="!loginService.loginObj.loginNotification" (click)=onStart()>Start Quiz</button>
 </div>

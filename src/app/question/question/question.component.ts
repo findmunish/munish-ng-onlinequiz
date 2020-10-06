@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router/*, ActivatedRoute, ParamMap*/ } from '@angular/router';
 
-import { ErrorsComponent } from '../../errors/errors/errors.component';
+//import { ErrorsComponent } from '../../errors/errors/errors.component';
 import { LoginService } from '../../services/login.service';
 import { QuestionBankService } from '../../services/question-bank.service';
 import { RoutingService } from '../../services/routing.service';
@@ -14,14 +14,14 @@ import { RoutingService } from '../../services/routing.service';
 export class QuestionComponent implements OnInit {
   currQuesIndex = -1;
   currQuestion: any = [];
-  checkErrors = {login:true, question:true, evaluate:true};
-  constructor(private activatedRoute: ActivatedRoute,
+  checkErrors = {login:true, question:true, evaluate:false};
+  constructor(//private activatedRoute: ActivatedRoute,
               private router:Router,
               public loginService: LoginService,
               public questionBankService: QuestionBankService,
               public routingService: RoutingService) {}
   ngOnInit(): void {
-    this.setCurrentQuestionNum(this.activatedRoute.snapshot.paramMap.get('id') );
+    //this.setCurrentQuestionNum(this.activatedRoute.snapshot.paramMap.get('id') );
     if(!this.questionBankService.doQuestionsExist()) {
       this.currQuestion = this.questionBankService.questionBank.questions[this.currQuesIndex];
     }

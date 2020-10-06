@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
-import { ErrorsComponent } from '../../errors/errors/errors.component';
+//import { ErrorsComponent } from '../../errors/errors/errors.component';
 import { LoginService } from '../../services/login.service';
 import { QuestionBankService } from '../../services/question-bank.service';
 import { RoutingService } from '../../services/routing.service';
@@ -13,7 +13,7 @@ import { RoutingService } from '../../services/routing.service';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
-    checkErrors = {login:true, question:true, evaluate:false};
+    checkErrors = {login:true, question:true, evaluate:true};
   questionaireJsonLink = 'https://api.jsonbin.io/b/5f780373302a837e95736e9a';
   constructor(private httpQuestionaireClient: HttpClient,
               public loginService: LoginService,

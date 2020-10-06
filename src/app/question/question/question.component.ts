@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import { ErrorsComponent } from '../../errors/errors/errors.component';
@@ -12,13 +12,14 @@ import { RoutingService } from '../../services/routing.service';
   styleUrls: ['./question.component.css']
 })
 export class QuestionComponent implements OnInit {
+  currQuesIndex = -1;
+  currQuestion: any = [];
+  checkErrors = {login:false, question:false, evaluate:false};
   constructor(private activatedRoute: ActivatedRoute,
               private router:Router,
               public loginService: LoginService,
               public questionBankService: QuestionBankService,
               public routingService: RoutingService) {}
-  currQuesIndex = -1;
-  currQuestion: any = [];
   ngOnInit(): void {
     this.setCurrentQuestionNum(this.activatedRoute.snapshot.paramMap.get('id') );
     if(!this.questionBankService.doQuestionsExist()) {

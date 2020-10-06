@@ -13,15 +13,15 @@ import { RoutingService } from '../../services/routing.service';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
+    checkErrors = {login:true, question:true, evaluate:true};
   questionaireJsonLink = 'https://api.jsonbin.io/b/5f780373302a837e95736e9a';
   constructor(private httpQuestionaireClient: HttpClient,
               public loginService: LoginService,
               public questionBankService: QuestionBankService,
               public routingService: RoutingService,
               private router: Router) { }
-  checkErrors = {login:true, question:true, evaluate:true};
   ngOnInit() {
-  }
+}
   setQuestionBank(question) {
     return question
   }

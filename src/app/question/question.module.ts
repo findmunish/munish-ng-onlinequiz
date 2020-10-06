@@ -21,5 +21,4 @@ const routes: Routes = [
   ],
   declarations: [QuestionComponent, AttemptQuestionComponent, ReviewQuestionComponent]
 })
-
 export class QuestionModule { }

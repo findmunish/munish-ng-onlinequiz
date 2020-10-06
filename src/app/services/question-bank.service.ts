@@ -3,7 +3,6 @@ import { QUESTION_REPO } from '../data-store/questionsRepository';
 
 @Injectable()
 export class QuestionBankService {
-
   questionBank: any = [];
   numQuestionsAttempted = 0;
   constructor() { }
@@ -54,5 +53,8 @@ export class QuestionBankService {
   }
   getIncompleteEvaluationMessages() {
     return ['Cannot evaluate now!', 'Please complete the quiz first :)'];
+  }
+  getQuizRouteEndpointMessage() {
+    return this.isAttempted() ? 'Thanks for attending!' : 'All the best!'
   }
 }

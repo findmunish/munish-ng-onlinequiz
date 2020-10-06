@@ -20,8 +20,7 @@ export class QuizComponent implements OnInit {
               public questionBankService: QuestionBankService,
               public routingService: RoutingService,
               private router: Router) { }
-  ngOnInit() {
-}
+  ngOnInit() {}
   setQuestionBank(question) {
     return question
   }

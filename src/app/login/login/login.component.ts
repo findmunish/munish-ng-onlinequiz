@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       this.disableSubmitBtn = !(field.username && field.password);
     })
   }
-  checkErrors = {loginNotification:true, login:false, question:false, evaluate:false};
+  checkErrors = {loginNotification:false, login:false, question:false, evaluate:false};
   loginUser() {
     const {username, password} = this.loginForm.value;
     let index = this.registeredUsers.findIndex( regdUser => username.toLowerCase() === regdUser.username.toLowerCase() && password === regdUser.password )

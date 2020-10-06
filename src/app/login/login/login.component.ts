@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     this.loginForm.reset();
     this.loginService.loginObj = {name: '', isLoggedIn: false, loginNotification: true};
     if(index !== -1) {
-      this.loginService.loginObj = {name: this.registeredUsers[index].username, isLoggedIn: true, loginNotification: true};
+      this.loginService.loginObj = {name: this.registeredUsers[index].username, isLoggedIn: true, loginNotification: false};
       this.questionBankService.setQuestionBank();
       this.router.navigateByUrl(this.routingService.QUIZ);
     }

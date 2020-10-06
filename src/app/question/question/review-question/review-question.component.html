@@ -26,7 +26,7 @@
   </div>
   <span>
     <button
-      [disabled]="currQuesIndex < questionBankService.getNumQuestions()-1"
+      [disabled]="currQuesIndex >= questionBankService.getNumQuestions()-1"
       class="btn btn-success spacing"
       (click)="onNextQuestion(1)">
         Next Question
@@ -34,7 +34,7 @@
   </span>
   <span>
     <button
-      [disabled]="currQuesIndex > 0"
+      [disabled]="currQuesIndex <= 0"
       class="btn btn-success spacing"
       (click)="onNextQuestion(-1)">
         Previous Question
@@ -42,7 +42,6 @@
   </span>
   <span>
     <button
-      [disabled]="currQuesIndex===0 || currQuesIndex===questionBankService.getNumQuestions()-1"
       class="btn btn-info spacing"
       (click)="onNextQuestion(questionBankService.getNumQuestions()+1)">
         Back Page

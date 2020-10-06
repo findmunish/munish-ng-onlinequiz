@@ -13,7 +13,7 @@ import { RoutingService } from '../../services/routing.service';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
-    checkErrors = {login:true, question:true, evaluate:true};
+    checkErrors = {login:true, question:true, evaluate:false};
   questionaireJsonLink = 'https://api.jsonbin.io/b/5f780373302a837e95736e9a';
   constructor(private httpQuestionaireClient: HttpClient,
               public loginService: LoginService,

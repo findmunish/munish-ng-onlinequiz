@@ -14,7 +14,7 @@ import { RoutingService } from '../../services/routing.service';
 export class QuestionComponent implements OnInit {
   currQuesIndex = -1;
   currQuestion: any = [];
-  checkErrors = {login:false, question:false, evaluate:false};
+  checkErrors = {login:true, question:true, evaluate:true};
   constructor(private activatedRoute: ActivatedRoute,
               private router:Router,
               public loginService: LoginService,

@@ -20,5 +20,10 @@
 		<button type="submit" [disabled]="disableSubmitBtn" class="btn btn-success">Submit</button>
 	</form>
   <app-errors> </app-errors>
-  <button [hidden]="!loginService.loginObj.loginNotification" (click)=onStart()>Start Quiz</button>
+  <button
+    class="btn btn-info"
+    [hidden]="!loginService.loginObj.loginNotification && !loginService.loginObj.isLoggedIn"
+    (click)=onStart()>
+      Start Quiz
+  </button>
 </div>

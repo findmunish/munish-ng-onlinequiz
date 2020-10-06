@@ -1,10 +1,8 @@
 import { Component, VERSION } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Router } from '@angular/router';
 import { LoginService } from './services/login.service';
 import { QuestionBankService } from './services/question-bank.service';
 import { RoutingService } from './services/routing.service';
-
-import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'my-app',
@@ -13,7 +11,6 @@ import { filter } from 'rxjs/operators';
 })
 export class AppComponent  {
   constructor(private router: Router,
-              private activatedRoute: ActivatedRoute,
               public loginService: LoginService,
               public questionBankService: QuestionBankService,
               public routingService: RoutingService) {}
@@ -22,11 +19,12 @@ export class AppComponent  {
   }
   onLogin() {}
   onLogout() {
-    this.loginService.loginObj = {name: '', isLoggedIn: false};
+    this.loginService.loginObj.reset();
     this.questionBankService.resetQuestionBank();
     this.router.navigateByUrl(this.routingService.LOGIN);
   }
   onHome() {
+    this.loginService.loginObj.loginNotification = false;
     let toNavigateRoute = !this.loginService.loginObj.isLoggedIn ? this.routingService.LOGIN : this.router.url;
     this.router.navigateByUrl(toNavigateRoute);
   }

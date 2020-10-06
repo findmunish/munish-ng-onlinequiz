@@ -18,9 +18,9 @@ import { LoginService } from './services/login.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ErrorsModule,
     AppRoutingModule
   ],
-  exports: [ErrorsModule],
   declarations: [
     AppComponent,
     HelloComponent

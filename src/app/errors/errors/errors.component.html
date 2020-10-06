@@ -1,21 +1,20 @@
 <div>
-  <h1> checkLoginError = {{checkLoginError}} </h1>
-  <h1> checkQuestionsError = {{checkQuestionsError}} </h1>
-  <h1> checkEvaluationError = {{checkEvaluationError}} </h1>
-  <div *ngIf="checkLoginError && !loginService.loginObj.isLoggedIn">
+  <h1> checkLoginError = {{checkErrors.isLoggedIn}} </h1>
+  <h1> checkQuestionsError = {{checkErrors.isQuestions}} </h1>
+  <h1> checkEvaluationError = {{checkErrors.isEvaluated}} </h1>
+  <div *ngIf="checkErrors.isLoggedIn && !loginService.loginObj.isLoggedIn">
     <div *ngFor="let message of loginService.getLoginFailMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
   </div>
-  <div *ngIf="checkQuestionsError && loginService.loginObj.isLoggedIn && questionBankService.doQuestionsExist()">
+  <div *ngIf="checkErrors.isQuestions && loginService.loginObj.isLoggedIn && questionBankService.doQuestionsExist()">
     <div *ngFor="let message of questionBankService.getNoQuestionsMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
   </div>
-  <div *ngIf="checkEvaluationError && loginService.loginObj.isLoggedIn && !questionBankService.doQuestionsExist() && !questionBankService.isAttempted()">
+  <div *ngIf="checkErrors.isEvaluated && loginService.loginObj.isLoggedIn && !questionBankService.doQuestionsExist() && !questionBankService.isAttempted()">
     <div *ngFor="let message of questionBankService.getIncompleteEvaluationMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
   </div>
 </div>
-

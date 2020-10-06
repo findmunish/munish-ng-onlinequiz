@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { LoginService } from '../../services/login.service';
 import { QuestionBankService } from '../../services/question-bank.service';
@@ -14,6 +14,8 @@ export class ErrorsComponent implements OnInit {
               public questionBankService: QuestionBankService,) { }
 
   ngOnInit() {
-
   }
+  @Input() checkLoginError: boolean = false;
+  @Input() checkQuesionsError: boolean = false;
+  @Input() checkEvaluationError: boolean = false;
 }

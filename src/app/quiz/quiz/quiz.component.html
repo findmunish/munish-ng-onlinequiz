@@ -25,9 +25,8 @@
         View Results
     </button>
   </div>
-
   <app-errors></app-errors>
-  <div *ngIf="!loginService.loginObj.isLoggedIn">
+  <!--<div *ngIf="!loginService.loginObj.isLoggedIn">
     <div *ngFor="let message of loginService.getLoginFailMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
@@ -36,5 +35,5 @@
     <div *ngFor="let message of questionBankService.getNoQuestionsMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
-  </div>
+  </div>-->
 </div>

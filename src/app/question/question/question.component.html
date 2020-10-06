@@ -15,7 +15,7 @@
     </app-review-question>
   </div>
   <app-errors></app-errors>
-  <div *ngIf="!loginService.loginObj.isLoggedIn">
+  <!--<div *ngIf="!loginService.loginObj.isLoggedIn">
     <div *ngFor="let message of loginService.getLoginFailMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
@@ -25,7 +25,7 @@
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>
   </div>
-  <!--<div *ngIf="loginService.loginObj.isLoggedIn && !questionBankService.doQuestionsExist() && !questionBankService.isAttempted()">
+  <div *ngIf="loginService.loginObj.isLoggedIn && !questionBankService.doQuestionsExist() && !questionBankService.isAttempted()">
     <div *ngFor="let message of questionBankService.getIncompleteEvaluationMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>
     </div>

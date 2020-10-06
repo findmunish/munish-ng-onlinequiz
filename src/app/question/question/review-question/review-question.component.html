@@ -24,13 +24,28 @@
       </div>
     </div>
   </div>
-  <span *ngIf="currQuesIndex < questionBankService.getNumQuestions()-1">
-    <button class="btn btn-success spacing" (click)="onNextQuestion(1)">Next Question </button>
+  <span>
+    <button
+      [disabled]="currQuesIndex < questionBankService.getNumQuestions()-1"
+      class="btn btn-success spacing"
+      (click)="onNextQuestion(1)">
+        Next Question
+    </button>
   </span>
-  <span *ngIf="currQuesIndex > 0">
-  <button class="btn btn-success spacing" (click)="onNextQuestion(-1)">Previous Question</button>
+  <span>
+    <button
+      [disabled]="currQuesIndex > 0"
+      class="btn btn-success spacing"
+      (click)="onNextQuestion(-1)">
+        Previous Question
+    </button>
   </span>
-  <span *ngIf="currQuesIndex===0 || currQuesIndex===questionBankService.getNumQuestions()-1">
-  <button class="btn btn-success spacing" (click)="onNextQuestion(questionBankService.getNumQuestions()+1)">Back Page</button>
+  <span>
+    <button
+      [disabled]="currQuesIndex===0 || currQuesIndex===questionBankService.getNumQuestions()-1"
+      class="btn btn-info spacing"
+      (click)="onNextQuestion(questionBankService.getNumQuestions()+1)">
+        Back Page
+    </button>
   </span>
 </div>

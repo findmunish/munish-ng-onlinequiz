@@ -15,5 +15,5 @@ export class ErrorsComponent implements OnInit {
 
   ngOnInit() {
   }
-  @Input() checkErrors: any = {isLoggedIn:false, isQuestions:false, isEvaluated:false};
+  @Input() checkErrors: any = {login:false, question:false, evaluate:false};
 }

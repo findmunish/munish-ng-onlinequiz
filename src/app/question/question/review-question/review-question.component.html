@@ -24,27 +24,21 @@
       </div>
     </div>
   </div>
-  <span>
-    <button
-      [disabled]="currQuesIndex >= questionBankService.getNumQuestions()-1"
-      class="btn btn-success spacing"
-      (click)="onNextQuestion(1)">
-        Next Question
-    </button>
-  </span>
-  <span>
+  <button
+    [disabled]="currQuesIndex >= questionBankService.getNumQuestions()-1"
+    class="btn btn-success spacing"
+    (click)="onNextQuestion(1)">
+      Next Question
+  </button>
     <button
       [disabled]="currQuesIndex <= 0"
       class="btn btn-success spacing"
       (click)="onNextQuestion(-1)">
         Previous Question
     </button>
-  </span>
-  <span>
     <button
       class="btn btn-info spacing"
       (click)="onNextQuestion(questionBankService.getNumQuestions()+1)">
         Back Page
     </button>
-  </span>
 </div>

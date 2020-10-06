@@ -11,7 +11,7 @@ import { RoutingService } from '../../services/routing.service';
   styleUrls: ['./review.component.css']
 })
 export class ReviewComponent implements OnInit {
-  checkErrors = {login:true, question:true, evaluate:true};
+  checkErrors = {loginNotification:false, login:true, question:true, evaluate:true};
   constructor(private router: Router,
             public loginService: LoginService,
             public questionBankService: QuestionBankService,

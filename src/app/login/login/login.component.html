@@ -19,12 +19,13 @@
   </div>
 				<button type="submit" [disabled]="disableSubmitBtn" class="btn btn-success">Submit</button>
 	</form>
-	<div style="margin-top: 15px;" *ngIf="alertMessage !== ''">
+  <app-errors [checkErrors]="checkErrors"> </app-errors>
+	<!--<div style="margin-top: 15px;" *ngIf="alertMessage !== ''">
 		<div class="alert alert-success" role="alert" *ngIf="this.loginService.loginObj.isLoggedIn">
 			{{alertMessage}}
 		</div>
 		<div class="alert alert-danger" role="alert" *ngIf="!this.loginService.loginObj.isLoggedIn">
 			{{alertMessage}}
 		</div>
-	</div>
+	</div>-->
 </div>

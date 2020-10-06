@@ -35,15 +35,18 @@ export class LoginComponent implements OnInit {
       this.disableSubmitBtn = !(field.username && field.password);
     })
   }
+  checkErrors = {loginNotification:true, login:false, question:false, evaluate:false};
   loginUser() {
     const {username, password} = this.loginForm.value;
     let index = this.registeredUsers.findIndex( regdUser => username.toLowerCase() === regdUser.username.toLowerCase() && password === regdUser.password )
     this.loginForm.reset();
     this.loginService.loginObj = {name: '', isLoggedIn: false};
-    this.alertMessage = 'Invalid Credentials!';
+    this.checkErrors.loginNotification = false;
+    //this.alertMessage = 'Invalid Credentials!';
     if(index !== -1) {
       this.loginService.loginObj = {name: this.registeredUsers[index].username, isLoggedIn: true};
-      this.alertMessage = 'Valid Credentials!';
+      //this.alertMessage = 'Valid Credentials!';
+      this.checkErrors.loginNotification = true;
       this.questionBankService.setQuestionBank();
       this.router.navigateByUrl(this.routingService.QUIZ);
     }

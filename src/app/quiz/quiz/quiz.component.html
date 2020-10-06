@@ -25,7 +25,7 @@
         View Results
     </button>
   </div>
-  <app-errors></app-errors>
+  <ErrorsComponent></ErrorsComponent>
   <div *ngIf="!loginService.loginObj.isLoggedIn">
     <div *ngFor="let message of loginService.getLoginFailMessages()">
       <h3 class="alert alert-danger"> {{message}}</h3>

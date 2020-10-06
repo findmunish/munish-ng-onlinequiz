@@ -14,7 +14,7 @@ export class QuestionComponent implements OnInit {
 
   currQuesIndex = -1;
   currQuestion: any = [];
-  checkErrors = {loginNotification:false, login:true, question:true, evaluate:false};
+  checkErrors = {login:true, question:true, evaluate:false};
   constructor(private activatedRoute: ActivatedRoute,
               private router:Router,
               public loginService: LoginService,

@@ -1,14 +1,6 @@
 <div>
-  <div *ngIf="checkErrors.loginNotification" style="margin-top: 15px;" class='alert' [ngClass]="loginService.getLoginValidationMessage().class">
+  <div *ngIf="loginService.loginObj.loginNotification" style="margin-top: 15px;" class='alert' [ngClass]="loginService.getLoginValidationMessage().class">
     {{loginService.getLoginValidationMessage().message}}
-    <!--<div style="margin-top: 15px;" *ngIf="alertMessage !== ''">
-      <div class="alert alert-success" role="alert" *ngIf="loginService.loginObj.isLoggedIn">
-        {{alertMessage}}
-      </div>
-      <div class="alert alert-danger" role="alert" *ngIf="!loginService.loginObj.isLoggedIn">
-        {{alertMessage}}
-      </div>
-    </div>-->
   </div>
   <div *ngIf="checkErrors.login && !loginService.loginObj.isLoggedIn">
     <div *ngFor="let message of loginService.getLoginFailMessages()">

@@ -12,6 +12,5 @@ export class ErrorsComponent implements OnInit {
   constructor(public loginService: LoginService,
               public questionBankService: QuestionBankService,) { }
   ngOnInit() {}
-  loginNotification = false;
-  @Input() checkErrors: any = {loginNotification:  false, login:false, question:false, evaluate:false};
+  @Input() checkErrors: any = {loginNotification: false, login:false, question:false, evaluate:false};
 }

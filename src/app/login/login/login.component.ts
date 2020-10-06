@@ -41,12 +41,11 @@ export class LoginComponent implements OnInit {
     let index = this.registeredUsers.findIndex( regdUser => username.toLowerCase() === regdUser.username.toLowerCase() && password === regdUser.password )
     this.loginForm.reset();
     this.loginService.loginObj = {name: '', isLoggedIn: false};
-    this.checkErrors.loginNotification = false;
+    this.checkErrors.loginNotification = true;
     //this.alertMessage = 'Invalid Credentials!';
     if(index !== -1) {
       this.loginService.loginObj = {name: this.registeredUsers[index].username, isLoggedIn: true};
       //this.alertMessage = 'Valid Credentials!';
-      this.checkErrors.loginNotification = true;
       this.questionBankService.setQuestionBank();
       this.router.navigateByUrl(this.routingService.QUIZ);
     }

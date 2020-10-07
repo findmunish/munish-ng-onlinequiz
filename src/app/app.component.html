@@ -12,8 +12,7 @@
     <button
       class="btn btn-primary spacing"
       [disabled]="loginService.loginObj.isLoggedIn"
-      routerLink={{routingService.LOGIN}}
-      (click)="onLogin()">
+      routerLink={{routingService.LOGIN}}>
         {{getLoginButtonName()}}
     </button>
     <button
@@ -25,6 +24,7 @@
     </button>
   </div>
 </nav>
+
 <div class="container-fluid">
   <router-outlet></router-outlet>
 </div>

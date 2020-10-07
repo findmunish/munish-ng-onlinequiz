@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   { path: '', component: LoginComponent},
 ]
+
 @NgModule({
   imports: [
     CommonModule,
@@ -20,5 +21,4 @@ const routes: Routes = [
   ],
   declarations: [LoginComponent]
 })
-
 export class LoginModule { }

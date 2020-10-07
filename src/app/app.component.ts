@@ -10,7 +10,6 @@ import { RoutingService } from './services/routing.service';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-
   constructor(private router: Router,
               public loginService: LoginService,
               public questionBankService: QuestionBankService,
@@ -18,7 +17,6 @@ export class AppComponent  {
   ngOnInit() {
     this.router.navigateByUrl(this.routingService.LOGIN)
   }
-  onLogin() {}
   onLogout() {
     this.loginService.resetLoginObj();
     this.questionBankService.resetQuestionBank();

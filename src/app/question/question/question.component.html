@@ -1,5 +1,6 @@
 <div class="jumbotron">
   <div *ngIf="loginService.loginObj.isLoggedIn && !questionBankService.doQuestionsExist()">
+
     <app-attempt-question
       *ngIf="!questionBankService.isAttempted()"
       [currQuesIndex]="currQuesIndex"

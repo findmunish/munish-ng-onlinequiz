@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -20,8 +20,6 @@ export class LoginComponent implements OnInit {
     password: [''],
   });
   disableSubmitBtn = false;
-  @Output() setAuthentication = new EventEmitter()
-  @Output() sendRegisteredUserList = new EventEmitter()
   constructor(private formBuilder: FormBuilder,
               public loginService: LoginService,
               public routingService: RoutingService,
